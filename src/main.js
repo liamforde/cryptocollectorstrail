@@ -51,3 +51,32 @@ document.querySelector('#logo').src = logo
 
     setInterval(updateCountdown, 1000);
     window.onload = updateCountdown;
+
+document.getElementById('sponsor-form').addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById('sponsor-name').value;
+  const email = document.getElementById('sponsor-email').value;
+  const message = document.getElementById('sponsor-message').value;
+
+  try {
+    const response = await fetch('/api/addSponsor', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, email, message }),
+    });
+
+    if (response.ok) {
+      alert('Thank you! Your sponsorship request has been submitted.');
+      document.getElementById('sponsor-form').reset();
+    } else {
+      alert('There was an error submitting your request. Please try again later.');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('There was an error submitting your request. Please try again later.');
+  }
+});
+
