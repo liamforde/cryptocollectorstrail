@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
+
+  <title>Crypto Collectors Trail</title>
+  <script type="module" src="/src/main.js"></script>
+  <style>
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      20% {
+        opacity: 0.0;
+      }
+
+      70% {
+        opacity: 0.0;
+      }
+    }
+
+    .blink {
+      animation: blink 4s infinite ease-in-out;
+    }
+
+    .delay-100 {
+      animation-duration: 4s;
+      animation-delay: .6s;
+    }
+
+    .delay-300 {
+      animation-duration: 5s;
+      animation-delay: 1.6s;
+    }
+
+    .delay-500 {
+      animation-duration: 4s;
+      animation-delay: 2.1s;
+    }
+
+    @supports (-moz-touch-enabled: 1) {
+
+      html,
+      body {
+        overflow-x: hidden;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-zinc-900 text-zinc-200">
+
+  <header class="sticky w-full top-0 z-50">
+    <nav class="bg-zinc-800/30 absolute backdrop-blur-md w-full border-b-0 py-4 px-6 md:px-8 lg:px-12">
+      <div class=" mx-auto flex justify-between items-center ">
+
+        <div>
+          <a href="#home"><img id="logo" alt="Logo" class="h-[35px] " /></a>
+
+        </div>
+
+
+        <button id="menu-btn" class="md:hidden focus:outline-none">
+
+          <svg id="hamburger-icon" class="w-6 h-6 block" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+
+          <!-- X Icon -->
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex gap-16">
+          <li><a href="#home" class="hover:text-primary-600 font-light">Home</a></li>
+          <li><a href="#sponsor" class="hover:text-primary-600 font-light">Sponsor</a></li>
+          <li><a href="#host" class="hover:text-primary-600 font-light">Host</a></li>
+        </ul>
+      </div>
+
+      <!-- Mobile Menu -->
+      <ul id="mobile-menu" class="mt-4 hidden flex flex-col justify-center items-center gap-2 md:hidden">
+        <li><a href="#home" class="block w-full  py-2 hover:text-primary-600 ">Home</a></li>
+        <li><a href="#sponsor" class="block w-full  py-2 hover:text-primary-600">Sponsor</a></li>
+        <li><a href="#host" class="block  w-full py-2 hover:text-primary-600">Host</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+
+
+
+  <!-- 1st section-->
+  <section id="home"
+    class="pt-24 md:pt-28   flex items-center justify-center  bg-[url('/background-1.png')]  bg-contain md:bg-cover bg-no-repeat  bg-[center_67px]">
+
+
+    <div
+      class="container max-w-contain flex flex-col items-center  justify-center gap-8 lg:gap-12 px-6 md:px-8 lg:px-12">
+
+      <!-- announcement-->
+      <div
+        class="flex flex-col items-center px-4 lg:px-6 py-3 gap-1 md:gap-2 text-center bg-primary-900/30 border-2 border-primary-600/80 rounded-lg shadow-lg shadow-primary-200/10">
+        <h3 class=" text-primary-500  uppercase text-xs md:text-base ">First Trail Launches In</h3>
+
+        <div class="flex flex-row items-center p-0 gap-4 md:gap-5 grow-0">
+          <p class="text-center">
+            <span class="block text-xl md:text-3xl  font-light">28</span>
+            <span class="block text-xs text-primary-500 ">DAYS</span>
+          </p>
+          <p class="text-center">
+            <span class="block  text-xl md:text-3xl  font-light">14</span>
+            <span class="block text-xs text-primary-500 ">HOUR</span>
+          </p>
+          <p class="text-center">
+            <span class="block  text-xl md:text-3xl font-light">01</span>
+            <span class="block text-xs text-primary-500  ">MIN</span>
+          </p>
+          <p class="text-center">
+            <span class="block  text-xl md:text-3xl   font-light">22</span>
+            <span class="block text-xs text-primary-500">SEC</span>
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- main content -->
+      <div class="flex flex-col items-center text-center ">
+        <h1
+          class="text-4xl md:text-7xl tracking-wide leading-none max-w-[400px] md:max-w-[550px]  font-light pb-8 lg:pb-12">
+          Collect coins
+          explore your city and
+          win prizes </h1>
+        <p class="text-zinc-400 lg:text-xl  lg:leading-8 max-w-[400px] md:max-w-[550px]  pb-8 mb:pb-10 lg:pb-12">We’re
+          looking
+          for
+          hosts and
+          sponsors to join
+          the experience and get featured
+          in a
+          unique city-wide adventure.</p>
+        <div class="w-full flex flex-col sm:flex-row justify-center items-center gap-8 pb-14 lg:pb-32">
+          <button onclick="document.getElementById('sponsor').scrollIntoView()"
+            class="flex-1 max-w-xs w-full px-4 md:px-8 py-4 bg-primary-400 leading-none text-zinc-900 font-semibold rounded-md hover:bg-primary-200 hover:shadow-[0_0_20px_theme('colors.primary.800')] transition duration-300">
+            Join Our Sponsors
+          </button>
+
+          <button onclick="document.getElementById('host').scrollIntoView()"
+            class="flex-1 max-w-xs w-full px-4 md:px-8 py-4 bg-primary-400 leading-none text-gray-900 font-semibold rounded-md hover:bg-primary-200 hover:shadow-[0_0_20px_theme('colors.primary.800')] transition duration-300">
+            Host a POS stand
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ======== SECTION 2 SPONSOR =======    -->
+  <section id="sponsor" class=" relative pt-20  lg:pt-28  pb-24 lg:pb-32 px-6 md:px-8 lg:px-12 ">
+
+
+    <svg
+      class="absolute left-0 xl:left-[10%] top-[10%] -translate-y-1/2 z-[-10] w-[300px] h-[301px] lg:w-[400px] lg:h-[401px] "
+      viewBox="0 0 400 401" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle class="dot blink delay-500" opacity="0.74" cx="221" cy="390.679" r="1" fill="#F3D038" stroke="#F3D038"
+        stroke-width="2" />
+      <circle class="dot blink delay-300" opacity="0.74" cx="328.364" cy="251.659" r="1" fill="#F3D038" stroke="#F3D038"
+        stroke-width="2" />
+      <circle class="dot blink delay-500" opacity="0.74" cx="231.739" cy="156.855" r="1" fill="#F3D038" stroke="#F3D038"
+        stroke-width="2" />
+      <circle class="dot delay-100" opacity="0.74" cx="122.22" cy="191.651" r="1" fill="#F3D038" stroke="#F3D038"
+        stroke-width="2" />
+      <circle class="dot blink delay-300" opacity="0.74" cx="41.7236" cy="279.348" r="1" fill="#F3D038" stroke="#F3D038"
+        stroke-width="2" />
+      <circle class="dot blink delay-100" opacity="0.74" cx="2.23828" cy="157.248" r="1" fill="#F3D038" stroke="#F3D038"
+        stroke-width="2" />
+      <circle class="dot blink delay-300" opacity="0.74" cx="58.625" cy="120" r="1" fill="#F3D038" stroke="#F3D038"
+        stroke-width="2" />
+    </svg>
+
+    <!-- Right group (mirrored) -->
+    <svg
+      class="absolute right-0  xl:right-[10%] top-[8%] -translate-y-1/2 z-[-10]  w-[300px] h-[301px] lg:w-[400px] lg:h-[401px] scale-x-[-1]"
+      viewBox="0 0 400 401" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+      fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle class="dot blink delay-300" opacity="0.74" cx="221" cy="390.679" r="1" fill="#F3D038" stroke="#F3D038"
+        stroke-width="2" />
+      <circle class="dot blink delay-100" opacity="0.74" cx="328.364" cy="251.659" r="1" fill="#F3D038" stroke="#F3D038"
+        stroke-width="2" />
+      <circle class="dot  blink delay-500" opacity="0.74" cx="231.739" cy="156.855" r="1" fill="#F3D038"
+        stroke="#F3D038" stroke-width="2" />
+      <circle class="dot blink delay-100" opacity="0.74" cx="122.22" cy="191.651" r="1" fill="#F3D038" stroke="#F3D038"
+        stroke-width="2" />
+      <circle class="dot blink delay-300" opacity="0.74" cx="41.7236" cy="279.348" r="1" fill="#F3D038" stroke="#F3D038"
+        stroke-width="2" />
+      <circle class="dot" opacity="0.74" cx="2.23828" cy="157.248" r="1" fill="#F3D038" stroke="#F3D038"
+        stroke-width="2" />
+      <circle class="dot blink delay-500" opacity="0.74" cx="58.625" cy="120" r="1" fill="#F3D038" stroke="#F3D038"
+        stroke-width="2" />
+    </svg>
+
+
+    <div class="container  max-w-contain flex flex-col items-center text-center ">
+      <h2
+        class="text-4xl md:text-6xl leading-none max-w-[400px] md:max-w-[550px] tracking-wide  font-light pb-4 lg:pb-8">
+        Become a
+        Sponsor</h2>
+      <p class="text-zinc-400 lg:text-xl lg:leading-8 max-w-[400px] md:max-w-[550px]    pb-10 lg:pb-14">Showcase
+        your coin
+        or brand
+        to a
+        passionate, tech-savvy audience. Premium visibility, direct engagement, and
+        community buzz await you.</p>
+    </div>
+
+
+    <form class="max-w-[932px] mx-auto space-y-4 md:space-y-8  flex flex-col items-center">
+      <!-- Company Name -->
+      <div class="max-w-[450px] w-full">
+        <label class=" block text-zinc-400 text-sm font-medium mb-2">*Company Name</label>
+        <input type="text" placeholder="Enter your name"
+          class="w-full border-2 leading-none placeholder-zinc-500 border-zinc-700 rounded-lg p-3 lg:p-4 bg-transparent focus:outline-none focus:ring-1 focus:ring-primary-400" />
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-4 md:gap-8 w-full items-center">
+        <!-- Brand -->
+        <div class="w-full md:w-1/2 max-w-[450px]">
+          <label class="block text-zinc-400 text-sm font-medium mb-2">*Brand to Feature</label>
+          <input type="text" placeholder="Enter your Brand name"
+            class="w-full border-2 leading-none placeholder-zinc-500 border-zinc-700 rounded-lg p-3 lg:p-4 bg-transparent focus:outline-none focus:ring-1 focus:ring-primary-400" />
+        </div>
+
+        <!-- Brand website -->
+        <div class="w-full md:w-1/2 max-w-[450px]">
+          <label class="block text-zinc-400 text-sm font-medium mb-2">*Brands website</label>
+          <input type="text" placeholder="Enter your website"
+            class="w-full border-2 leading-none placeholder-zinc-500 border-zinc-700 rounded-lg p-3 lg:p-4 bg-transparent focus:outline-none focus:ring-1 focus:ring-primary-400" />
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-4 md:gap-8 w-full items-center">
+        <!-- Email -->
+        <div class="w-full md:w-1/2 max-w-[450px]">
+          <label class="block text-zinc-400 text-sm font-medium mb-2">*Email address</label>
+          <input type="email" placeholder="Enter your email"
+            class="w-full border-2 leading-none placeholder-zinc-500 border-zinc-700 rounded-lg p-3 lg:p-4 bg-transparent focus:outline-none focus:ring-1 focus:ring-primary-400" />
+        </div>
+
+        <!-- Contact phone -->
+        <div class="w-full md:w-1/2 max-w-[450px]">
+          <label class="block text-zinc-400 text-sm font-medium mb-2">*Contact phone</label>
+          <input type="tel" placeholder="Enter your Phone"
+            class="w-full border-2 leading-none placeholder-zinc-500 border-zinc-700 rounded-lg p-3 lg:p-4 bg-transparent focus:outline-none focus:ring-1 focus:ring-primary-400" />
+        </div>
+
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-4 md:gap-8 w-full items-center">
+        <!-- Reword Coin -->
+        <div class="w-full md:w-1/2 max-w-[450px]">
+          <label class="block text-zinc-400 text-sm font-medium mb-2">*Select reward meme coin</label>
+          <input type="text" placeholder="Select meme coin"
+            class="w-full border-2 leading-none placeholder-zinc-500 border-zinc-700 rounded-lg p-3 lg:p-4 bg-transparent focus:outline-none focus:ring-1 focus:ring-primary-400" />
+        </div>
+
+        <!-- Contact phone -->
+        <div class="w-full md:w-1/2 max-w-[450px]">
+          <label class="block text-zinc-400 text-sm font-medium mb-2">*Select region</label>
+          <input type="text" placeholder="Select region"
+            class="w-full border-2 leading-none placeholder-zinc-500 border-zinc-700 rounded-lg p-3 lg:p-4 bg-transparent focus:outline-none focus:ring-1 focus:ring-primary-400" />
+        </div>
+
+      </div>
+
+      <!-- Cards Plan  -->
+      <div class="flex flex-col md:flex-row gap-4 md:gap-8 w-full items-center">
+        <div class="text-sm text-white w-full m-auto">
+
+
+          <div class=" flex flex-col md:flex-row w-full items-center justify-center gap-8 mt-8">
+
+            <!-- basic -->
+            <label class=" relative flex items-center cursor-pointer ">
+              <label class=" absolute top-[-28px] left-0 block text-zinc-400 text-sm font-medium mb-2 ">
+                *Select Plan
+              </label>
+              <input type="radio" name="plan" value="basic" class="hidden peer" />
+              <div
+                class=" border-2 py-4 px-4 rounded-2xl bg-zinc-900  text-zinc-300 border-zinc-700 peer-checked:border-primary-600 transition flex flex-col ml-0 ">
+                <p class="font-bold text-xl pb-2">Basic</p>
+                <div class="relative ">
+                  <div
+                    class="absolute  bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-zinc-700 via-zinc-600 to-zinc-700 mt-4">
+                  </div>
+                </div>
+                <ul class="flex flex-col gap-2  py-2">
+                  <li class="flex items-center"> <svg class="w-6 h-6 text-primary-600 mr-2" fill="currentColor"
+                      viewBox="0 0 20 20">
+                      <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 011.414-1.414L8.414 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
+                    </svg> Your brand appears on locations you choose.</li>
+                  <li class="flex items-center"> <svg class="w-6 h-6 text-primary-600 mr-2" fill="currentColor"
+                      viewBox="0 0 20 20">
+                      <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 011.414-1.414L8.414 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
+                    </svg> Collectors get your meme coin while stocks last.</li>
+                  <li class="flex items-center"> <svg class="w-6 h-6 text-primary-600 mr-2" fill="currentColor"
+                      viewBox="0 0 20 20">
+                      <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 011.414-1.414L8.414 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
+                    </svg> Brand shown in emails after QR is scanned.</li>
+                  <li class="flex items-center"> <svg class="w-6 h-6 text-primary-600 mr-2" fill="currentColor"
+                      viewBox="0 0 20 20">
+                      <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 011.414-1.414L8.414 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
+                    </svg> Listed on website, linked to your trail.</li>
+                  <li class="flex items-center"> <svg class="w-6 h-6 text-primary-600 mr-2" fill="currentColor"
+                      viewBox="0 0 20 20">
+                      <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 011.414-1.414L8.414 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
+                    </svg> 1,000+ scans monthly or one free month.</li>
+                  <li class="flex items-center"> <svg class="w-6 h-6 text-primary-600 mr-2" fill="currentColor"
+                      viewBox="0 0 20 20">
+                      <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 011.414-1.414L8.414 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
+                    </svg> Monthly report with scan and location data.</li>
+                  <li class="flex items-center"> <svg class="w-6 h-6 text-primary-600 mr-2" fill="currentColor"
+                      viewBox="0 0 20 20">
+                      <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 011.414-1.414L8.414 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
+                    </svg> Pay with your selected reward coin.</li>
+
+
+
+
+                  <div class="relative mt-2">
+                    <div
+                      class="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-zinc-700 via-zinc-600 to-zinc-700 mt-4">
+                    </div>
+                  </div>
+                  <p> <span class="font-bold text-xl">
+                      €500 </span>/ location
+                    monthly 12-month
+                    minimum.</p>
+                </ul>
+
+              </div>
+            </label>
+
+
+            <!-- premium -->
+            <label class="flex items-center  cursor-pointer">
+              <input type="radio" name="plan" value="premium" class="hidden peer" />
+              <div
+                class=" border-2 py-4 px-4  rounded-2xl bg-zinc-800  text-zinc-200 border-zinc-800 peer-checked:border-primary-600 transition flex flex-col ">
+                <p class="font-bold text-xl pb-2">Premium</p>
+                <div class="relative ">
+                  <div
+                    class="absolute  bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary-800 via-primary-600 to-primary-800 mt-4">
+                  </div>
+                </div>
+                <ul class="flex flex-col gap-2  py-2">
+                  <li class="flex items-center"> <svg class="w-6 h-6 text-primary-600 mr-2" fill="currentColor"
+                      viewBox="0 0 20 20">
+                      <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 011.414-1.414L8.414 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
+                    </svg> Your brand shown on all trail locations selected.</li>
+                  <li class="flex items-center"> <svg class="w-6 h-6 text-primary-600 mr-2" fill="currentColor"
+                      viewBox="0 0 20 20">
+                      <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 011.414-1.414L8.414 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
+                    </svg> Collectors can win big prize in your coin.</li>
+                  <li class="flex items-center"> <svg class="w-6 h-6 text-primary-600 mr-2" fill="currentColor"
+                      viewBox="0 0 20 20">
+                      <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 011.414-1.414L8.414 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
+                    </svg> 50% of payment funds the reward pool.</li>
+                  <li class="flex items-center"> <svg class="w-6 h-6 text-primary-600 mr-2" fill="currentColor"
+                      viewBox="0 0 20 20">
+                      <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 011.414-1.414L8.414 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
+                    </svg>Brand listed on website with sponsored trails.</li>
+                  <li class="flex items-center"> <svg class="w-6 h-6 text-primary-600 mr-2" fill="currentColor"
+                      viewBox="0 0 20 20">
+                      <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 011.414-1.414L8.414 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
+                    </svg> 10,000+ scans monthly or free bonus month.</li>
+                  <li class="flex items-center"> <svg class="w-6 h-6 text-primary-600 mr-2" fill="currentColor"
+                      viewBox="0 0 20 20">
+                      <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 011.414-1.414L8.414 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
+                    </svg> Detailed monthly analytics and engagement stats.</li>
+                  <li class="flex items-center"> <svg class="w-6 h-6 text-primary-600 mr-2" fill="currentColor"
+                      viewBox="0 0 20 20">
+                      <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 011.414-1.414L8.414 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
+                    </svg>Pay with your selected reward coin.</li>
+
+
+
+
+                  <div class="relative mt-2">
+                    <div
+                      class="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary-800 via-primary-600 to-primary-800 mt-4">
+                    </div>
+                  </div>
+                  <p> <span class="font-bold text-xl">
+                      €5,000 </span> / location monthly 12-month minimum.</p>
+                </ul>
+
+              </div>
+            </label>
+
+
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="max-w-[450px] w-full">
+        <label for="name" class=" block text-zinc-400 text-sm font-medium mb-2">*Company Name</label>
+
+        <textarea name="message" id="#" rows="5"
+          class="w-full border-2 resize-none placeholder-zinc-500 leading-relaxed border-zinc-700 rounded-lg p-4 bg-transparent focus:outline-none focus:ring-1 focus:ring-primary-400"></textarea>
+
+      </div>
+      <!-- Submit -->
+      <div class="max-w-[450px] w-full">
+        <button type="submit"
+          class="w-full px-4 md:px-8 py-4  bg-primary-400  leading-none text-gray-900 font-semibold rounded-md hover:bg-primary-200 hover:shadow-[0_0_20px_theme('colors.primary.800')] transition duration-300py-3 ">Submit</button>
+      </div>
+    </form>
+
+
+
+  </section>
+
+
+  <section id="host" class=" relative pt-20 lg:pt-28  pb-24 lg:pb-32 px-6 md:px-8 lg:px-12">
+    <!-- ======== SECTION 3 HOSTS =======    -->
+
+    <svg
+      class="absolute left-0 xl:left-[10%] top-[10%]  -translate-y-1/2 z-[-10] w-[300px] h-[301px] lg:w-[400px] lg:h-[401px]  "
+      viewBox="0 0 400 401" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle class="dot blink delay-100" opacity="0.74" cx="221" cy="390.679" r="1" fill="#F3D038" stroke="#F3D038"
+        stroke-width="2" />
+      <circle class="dot blink delay-100" opacity="0.74" cx="328.364" cy="251.659" r="1" fill="#F3D038" stroke="#F3D038"
+        stroke-width="2" />
+      <circle class="dot blink delay-300" opacity="0.74" cx="231.739" cy="156.855" r="1" fill="#F3D038" stroke="#F3D038"
+        stroke-width="2" />
+      <circle class="dot" opacity="0.74" cx="122.22" cy="191.651" r="1" fill="#F3D038" stroke="#F3D038"
+        stroke-width="2" />
+
+      <circle class="dot" opacity="0.74" cx="2.23828" cy="157.248" r="1" fill="#F3D038" stroke="#F3D038"
+        stroke-width="2" />
+      <circle class="dot blink delay-300" opacity="0.74" cx="58.625" cy="120" r="1" fill="#F3D038" stroke="#F3D038"
+        stroke-width="2" />
+    </svg>
+
+    <!-- Right group (mirrored) -->
+    <svg
+      class="absolute right-0  xl:right-[10%] top-[8%] -translate-y-1/2 z-[-10]  w-[300px] h-[301px] lg:w-[400px] lg:h-[401px] scale-x-[-1]"
+      viewBox="0 0 400 401" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+      fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle class="dot blink delay-300" opacity="0.74" cx="221" cy="390.679" r="1" fill="#F3D038" stroke="#F3D038"
+        stroke-width="2" />
+      <circle class="dot blink delay-100" opacity="0.74" cx="328.364" cy="251.659" r="1" fill="#F3D038" stroke="#F3D038"
+        stroke-width="2" />
+      <circle class="dot  blink delay-300" opacity="0.74" cx="231.739" cy="156.855" r="1" fill="#F3D038"
+        stroke="#F3D038" stroke-width="2" />
+      <circle class="dot blink delay-100" opacity="0.74" cx="122.22" cy="191.651" r="1" fill="#F3D038" stroke="#F3D038"
+        stroke-width="2" />
+
+      <circle class="dot" opacity="0.74" cx="2.23828" cy="157.248" r="1" fill="#F3D038" stroke="#F3D038"
+        stroke-width="2" />
+      <circle class="dot blink delay-500" opacity="0.74" cx="58.625" cy="120" r="1" fill="#F3D038" stroke="#F3D038"
+        stroke-width="2" />
+    </svg>
+
+
+
+    <div class="container max-w-contain flex flex-col items-center  text-center">
+      <h2
+        class="text-4xl md:text-6xl leading-none max-w-[400px] md:max-w-[550px] tracking-wide font-light  pb-4 lg:pb-8">
+        Host a POS
+        Stand</h2>
+      <p class="text-zinc-400 lg:text-xl lg:leading-8 max-w-[400px] md:max-w-[550px] pb-10 lg:pb-14">Drive more foot
+        traffic to
+        your
+        cafe or store. Be part of an exciting new movement and reward your customers with crypto collectibles.</p>
+    </div>
+
+
+    <!-- ==== FORM ====  -->
+
+    <form class=" max-w-[450px] space-y-4 md:space-y-8  mx-auto  ">
+      <!-- Company Name -->
+      <div>
+        <label class=" block text-zinc-400 text-sm font-medium mb-2">*Company Name</label>
+        <input type="text" placeholder="Enter your name"
+          class="w-full border-2 leading-none placeholder-zinc-500 border-zinc-700 rounded-lg p-3 lg:p-4 bg-transparent focus:outline-none focus:ring-1 focus:ring-primary-400" />
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label class="block text-zinc-400 text-sm font-medium mb-2">*Email address</label>
+        <input type="email" placeholder="Enter your email"
+          class="w-full border-2 leading-none placeholder-zinc-500 border-zinc-700 rounded-lg p-3 lg:p-4 bg-transparent focus:outline-none focus:ring-1 focus:ring-primary-400" />
+      </div>
+
+      <!-- Contact phone -->
+      <div>
+        <label class="block text-zinc-400 text-sm font-medium mb-2">*Contact phone</label>
+        <input type="tel" placeholder="Enter your phone"
+          class="w-full border-2 leading-none placeholder-zinc-500 border-zinc-700 rounded-lg p-3 lg:p-4 bg-transparent focus:outline-none focus:ring-1 focus:ring-primary-400" />
+      </div>
+
+      <!-- Store location address and Add button -->
+      <div>
+        <div class="flex justify-between items-center mb-1">
+          <label class="text-sm font-medium  text-zinc-400">*Store location address</label>
+          <button type="button"
+            class="text-sm text-zinc-400 bg-zinc-800 px-2 py-1 mb-1 rounded border-2 border-zinc-600 hover:bg-zinc-600 hover:text-zinc-400 transition ">+Add
+            Another
+            Store</button>
+        </div>
+        <input type="text" placeholder="Enter your store location"
+          class="w-full border-2 leading-none placeholder-zinc-500 border-zinc-700 rounded-lg p-3 lg:p-4 bg-transparent focus:outline-none focus:ring-1 focus:ring-primary-400" />
+      </div>
+
+      <!-- Bid amount -->
+      <div>
+        <label class="block text-zinc-400 text-sm font-medium mb-2">*Bid amount per store location (EUR)</label>
+        <input type="text" placeholder="Enter bid amount"
+          class="w-full border-2 leading-none placeholder-zinc-500 border-zinc-700 rounded-lg p-3 lg:p-4 bg-transparent focus:outline-none focus:ring-1 focus:ring-primary-400" />
+      </div>
+
+
+
+      <div class="text-sm text-white">
+        <label class="block text-zinc-400 text-sm font-medium mb-2">
+          *Hosting Occurrence
+        </label>
+
+        <div class="flex space-x-6">
+          <!-- One-Off -->
+          <label class="flex items-center space-x-2 cursor-pointer">
+            <input type="radio" name="hosting" value="one-off" class="hidden peer" />
+            <div
+              class="w-4 h-4 rounded-full border-2 border-gray-500 peer-checked:bg-zinc-200 peer-checked:border-zinc-300 transition">
+            </div>
+            <span class="text-gray-300">One-Off</span>
+          </label>
+
+          <!-- Recurring -->
+          <label class="flex items-center space-x-2 cursor-pointer">
+            <input type="radio" name="hosting" value="recurring" class="hidden peer" />
+            <div
+              class="w-4 h-4 rounded-full border-2 border-gray-500 peer-checked:bg-zinc-200 peer-checked:border-zinc-300 transition">
+            </div>
+            <span class="text-gray-300">Recurring</span>
+          </label>
+        </div>
+      </div>
+
+
+      <!-- Submit -->
+      <div>
+        <button type="submit"
+          class="w-full px-4 md:px-8 py-4  bg-primary-400  leading-none text-gray-900 font-semibold rounded-md hover:bg-primary-200 hover:shadow-[0_0_20px_theme('colors.primary.800')] transition duration-300py-3 ">Submit</button>
+      </div>
+    </form>
+
+
+
+
+
+
+  </section>
+
+
+  <section>
+    <footer
+      class="px-6 md:px-8 lg:px-12 text-lg font-light bg-zinc-800 border-t-2 border-primary-900 text-primary-200/50 py-24">
+      <p>2025 © Liam Forde</p>
+    </footer>
+  </section>
+</body>
+
+
+</html>
