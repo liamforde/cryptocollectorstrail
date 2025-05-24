@@ -236,7 +236,7 @@
       <!-- Company Name -->
       <div class="max-w-[450px] w-full">
         <label class=" block text-zinc-400 text-sm font-medium mb-2">*Company Name</label>
-        <input type="text" placeholder="Enter your name"
+        <input id="sponsor-name" type="text" placeholder="Enter your name"
           class="w-full border-2 leading-none placeholder-zinc-500 border-zinc-700 rounded-lg p-3 lg:p-4 bg-transparent focus:outline-none focus:ring-1 focus:ring-primary-400" />
       </div>
 
@@ -244,14 +244,14 @@
         <!-- Brand -->
         <div class="w-full md:w-1/2 max-w-[450px]">
           <label class="block text-zinc-400 text-sm font-medium mb-2">*Brand to Feature</label>
-          <input type="text" placeholder="Enter your Brand name"
+          <input id="sponsor-brand" type="text" placeholder="Enter your Brand name"
             class="w-full border-2 leading-none placeholder-zinc-500 border-zinc-700 rounded-lg p-3 lg:p-4 bg-transparent focus:outline-none focus:ring-1 focus:ring-primary-400" />
         </div>
 
         <!-- Brand website -->
         <div class="w-full md:w-1/2 max-w-[450px]">
           <label class="block text-zinc-400 text-sm font-medium mb-2">*Brands website</label>
-          <input type="text" placeholder="Enter your website"
+          <input id="sponsor-brand-website" type="text" placeholder="Enter your website"
             class="w-full border-2 leading-none placeholder-zinc-500 border-zinc-700 rounded-lg p-3 lg:p-4 bg-transparent focus:outline-none focus:ring-1 focus:ring-primary-400" />
         </div>
       </div>
@@ -260,14 +260,14 @@
         <!-- Email -->
         <div class="w-full md:w-1/2 max-w-[450px]">
           <label class="block text-zinc-400 text-sm font-medium mb-2">*Email address</label>
-          <input type="email" placeholder="Enter your email"
+          <input id="sponsor-email" type="email" placeholder="Enter your email"
             class="w-full border-2 leading-none placeholder-zinc-500 border-zinc-700 rounded-lg p-3 lg:p-4 bg-transparent focus:outline-none focus:ring-1 focus:ring-primary-400" />
         </div>
 
         <!-- Contact phone -->
         <div class="w-full md:w-1/2 max-w-[450px]">
           <label class="block text-zinc-400 text-sm font-medium mb-2">*Contact phone</label>
-          <input type="tel" placeholder="Enter your Phone"
+          <input id="sponsor-phone" type="tel" placeholder="Enter your Phone"
             class="w-full border-2 leading-none placeholder-zinc-500 border-zinc-700 rounded-lg p-3 lg:p-4 bg-transparent focus:outline-none focus:ring-1 focus:ring-primary-400" />
         </div>
 
@@ -277,14 +277,14 @@
         <!-- Reword Coin -->
         <div class="w-full md:w-1/2 max-w-[450px]">
           <label class="block text-zinc-400 text-sm font-medium mb-2">*Select reward meme coin</label>
-          <input type="text" placeholder="Select reward coin"
+          <input id="sponsor-coin" type="text" placeholder="Select reward coin"
             class="w-full border-2 leading-none placeholder-zinc-500 border-zinc-700 rounded-lg p-3 lg:p-4 bg-transparent focus:outline-none focus:ring-1 focus:ring-primary-400" />
         </div>
 
-        <!-- Contact phone -->
+        <!-- Region -->
         <div class="w-full md:w-1/2 max-w-[450px]">
           <label class="block text-zinc-400 text-sm font-medium mb-2">*Select region</label>
-          <input type="text" placeholder="Select region"
+          <input id="sponsor-region" type="text" placeholder="Select region"
             class="w-full border-2 leading-none placeholder-zinc-500 border-zinc-700 rounded-lg p-3 lg:p-4 bg-transparent focus:outline-none focus:ring-1 focus:ring-primary-400" />
         </div>
 
@@ -302,7 +302,7 @@
               <label class=" absolute top-[-28px] left-0 block text-zinc-400 text-sm font-medium mb-2 ">
                 *Select Plan
               </label>
-              <input type="radio" name="plan" value="basic" class="hidden peer" />
+              <input id="sponsor-plan" type="radio" name="plan" value="basic" class="hidden peer" />
               <div
                 class=" border-2 py-4 px-4 rounded-2xl bg-zinc-900  text-zinc-300 border-zinc-700 peer-checked:border-primary-600 transition flex flex-col ml-0 ">
                 <p class="font-bold text-xl pb-2">Basic</p>
@@ -375,7 +375,7 @@
 
             <!-- premium -->
             <label class="flex items-center  cursor-pointer">
-              <input type="radio" name="plan" value="premium" class="hidden peer" />
+              <input id="sponsor-plan" type="radio" name="plan" value="premium" class="hidden peer" />
               <div
                 class=" border-2 py-4 px-4  rounded-2xl bg-zinc-800  text-zinc-200 border-zinc-800 peer-checked:border-primary-600 transition flex flex-col ">
                 <p class="font-bold text-xl pb-2">Premium</p>
@@ -451,9 +451,9 @@
       </div>
 
       <div class="max-w-[450px] w-full">
-        <label for="name" class=" block text-zinc-400 text-sm font-medium mb-2">*Company Name</label>
+        <label for="name" class=" block text-zinc-400 text-sm font-medium mb-2">*Message</label>
 
-        <textarea name="message" id="#" rows="5"
+        <textarea id="sponsor-message" name="message" id="#" rows="5"
           class="w-full border-2 resize-none placeholder-zinc-500 leading-relaxed border-zinc-700 rounded-lg p-4 bg-transparent focus:outline-none focus:ring-1 focus:ring-primary-400"></textarea>
 
       </div>
