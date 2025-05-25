@@ -58,6 +58,12 @@ document.getElementById('sponsor-form').addEventListener('submit', async functio
   const name = document.getElementById('sponsor-name').value;
   const email = document.getElementById('sponsor-email').value;
   const message = document.getElementById('sponsor-message').value;
+  const brand = document.getElementById('sponsor-brand').value;
+  const website = document.getElementById('sponsor-brand-website').value;
+  const phone = document.getElementById('sponsor-phone').value;
+  const coin = document.getElementById('sponsor-coin').value;
+  const region = document.getElementById('sponsor-region').value;
+  const plan = document.getElementById('sponsor-plan').value;
 
   try {
     const response = await fetch('/api/addSponsor', {
@@ -65,7 +71,7 @@ document.getElementById('sponsor-form').addEventListener('submit', async functio
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ name, email, message }),
+      body: JSON.stringify({ name, email, message, brand, website, phone, coin, region, plan }),
     });
 
     if (response.ok) {
