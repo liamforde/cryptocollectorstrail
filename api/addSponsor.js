@@ -3,7 +3,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: 'Method Not Allowed' });
   }
 
-  const { name, email, message } = req.body;
+  const { name, email, message, brand, website, phone, coin, region, plan } = req.body;
 
   const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
   const BASE_ID = process.env.AIRTABLE_BASE_ID;
@@ -22,6 +22,12 @@ export default async function handler(req, res) {
         Name: name,
         Email: email,
         Message: message,
+        Brand: brand, 
+        Website: website, 
+        Phone: phone, 
+        Coin: coin, 
+        Region: region, 
+        Plan: plan,
       },
     }),
   };
