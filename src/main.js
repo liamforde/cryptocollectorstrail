@@ -56,8 +56,9 @@ document.getElementById('sponsor-form').addEventListener('submit', async functio
   e.preventDefault();
 
   // Clear previous error messages
+  // Clear previous error messages
   const errorMessages = document.querySelectorAll('.error-message');
-  errorMessages.forEach(msg => msg.remove());
+  errorMessages.forEach(msg => msg.textContent = '');
 
   const name = document.getElementById('sponsor-name').value.trim();
   const email = document.getElementById('sponsor-email').value.trim();
@@ -74,13 +75,14 @@ document.getElementById('sponsor-form').addEventListener('submit', async functio
   // Helper function to display error messages
   function showError(inputId, message) {
     const input = document.getElementById(inputId);
-    const error = document.createElement('div');
-    error.className = 'error-message';
-    error.textContent = message;
-    input.parentNode.insertBefore(error, input.nextSibling);
+    const error = input.parentNode.querySelector('.error-message'); // Get existing error div
+    if (error) {
+      error.textContent = message;
+    }
     input.classList.add('input-error');
     hasErrors = true;
   }
+
 
   // Basic validation checks
   if (!name) showError('sponsor-name', 'Name is required.');
