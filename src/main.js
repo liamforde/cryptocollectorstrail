@@ -55,15 +55,42 @@ document.querySelector('#logo').src = logo
 document.getElementById('sponsor-form').addEventListener('submit', async function (e) {
   e.preventDefault();
 
-  const name = document.getElementById('sponsor-name').value;
-  const email = document.getElementById('sponsor-email').value;
-  const message = document.getElementById('sponsor-message').value;
-  const brand = document.getElementById('sponsor-brand').value;
-  const website = document.getElementById('sponsor-brand-website').value;
-  const phone = document.getElementById('sponsor-phone').value;
-  const coin = document.getElementById('sponsor-coin').value;
-  const region = document.getElementById('sponsor-region').value;
-  const plan = document.getElementById('sponsor-plan').value;
+  // Clear previous error messages
+  const errorMessages = document.querySelectorAll('.error-message');
+  errorMessages.forEach(msg => msg.remove());
+
+  const name = document.getElementById('sponsor-name').value.trim();
+  const email = document.getElementById('sponsor-email').value.trim();
+  const message = document.getElementById('sponsor-message').value.trim();
+  const brand = document.getElementById('sponsor-brand').value.trim();
+  const website = document.getElementById('sponsor-brand-website').value.trim();
+  const phone = document.getElementById('sponsor-phone').value.trim();
+  const coin = document.getElementById('sponsor-coin').value.trim();
+  const region = document.getElementById('sponsor-region').value.trim();
+  const plan = document.getElementById('sponsor-plan').value.trim();
+
+  let hasErrors = false;
+
+  // Helper function to display error messages
+  function showError(inputId, message) {
+    const input = document.getElementById(inputId);
+    const error = document.createElement('div');
+    error.className = 'error-message';
+    error.textContent = message;
+    input.parentNode.insertBefore(error, input.nextSibling);
+    input.classList.add('input-error');
+    hasErrors = true;
+  }
+
+  // Basic validation checks
+  if (!name) showError('sponsor-name', 'Name is required.');
+  if (!email) {
+    showError('sponsor-email', 'Email is required.');
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    showError('sponsor-email', 'Please enter a valid email address.');
+  }
+
+  if (hasErrors) return;
 
   try {
     const response = await fetch('/api/addSponsor', {
