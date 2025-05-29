@@ -75,7 +75,7 @@ document.getElementById('sponsor-form').addEventListener('submit', async functio
   // Helper function to display error messages
   function showError(inputId, message) {
     const input = document.getElementById(inputId);
-    const error = input.parentNode.querySelector('.error-message'); // Get existing error div
+    const error = input.nextElementSibling;
     if (error) {
       error.textContent = message;
     }
