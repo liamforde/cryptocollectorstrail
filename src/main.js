@@ -75,11 +75,11 @@ document.getElementById('sponsor-form').addEventListener('submit', async functio
   // Helper function to display error messages
   function showError(inputId, message) {
     const input = document.getElementById(inputId);
-    const error = input.parentElement.querySelector('.error-message');
+    const error = input?.parentElement.querySelector('.error-message');
     if (error) {
       error.textContent = message;
     }
-    input.classList.add('input-error');
+    input?.classList.add('input-error');
     hasErrors = true;
   }
 
