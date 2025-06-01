@@ -68,7 +68,7 @@ document.getElementById('sponsor-form').addEventListener('submit', async functio
   const phone = document.getElementById('sponsor-phone').value.trim();
   const coin = document.getElementById('sponsor-coin').value.trim();
   const region = document.getElementById('sponsor-region').value.trim();
-  const plan = document.getElementById('sponsor-plan').value.trim();
+  const plan = document.querySelector('input[name="plan"]:checked')?.value.trim();
 
   let hasErrors = false;
 
