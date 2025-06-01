@@ -321,10 +321,31 @@
 
         <!-- Region -->
         <div class="w-full md:w-1/2 max-w-[450px]">
-          <label class="block text-zinc-400 text-sm font-medium mb-2">*Select region</label>
-          <input id="sponsor-region" type="text" placeholder="Select region" required
-            class="w-full border-2 leading-none placeholder-zinc-500 border-zinc-700 rounded-lg p-3 lg:p-4 bg-transparent focus:outline-none focus:ring-1 focus:ring-primary-400" />
-          <div class="error-message text-red-400 text-sm mt-1"></div>
+          <label class="block text-zinc-400 text-sm font-medium mb-2" for="region">*Select Region</label>
+          <select id="sponsor-region" required class="w-full border-2 leading-none placeholder-zinc-500 border-zinc-700 rounded-lg p-3 lg:p-4 bg-transparent text-zinc-300 focus:outline-none focus:ring-1 focus:ring-primary-400 appearance-none">
+            <option value="" disabled selected hidden class="placeholder-zinc-500">Select Region</option>
+            <option value="Global">Global</option>
+            <option value="Africa">Africa</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="North America">North America</option>
+            <option value="South America">South America</option>
+            <option value="Oceania">Oceania</option>
+          </select>
+        
+          <div id="country-container" style="display:none;">
+            <label for="country">Country:</label>
+            <select id="country">
+              <option value="">Select Country</option>
+            </select>
+          </div>
+        
+          <div id="city-container" style="display:none;">
+            <label for="city">City:</label>
+            <select id="city">
+              <option value="">Select City</option>
+            </select>
+          </div>
         </div>
 
       </div>
