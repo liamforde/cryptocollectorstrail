@@ -54,15 +54,27 @@ document.querySelector('#logo').src = logo
 
     // Sample data structure
       const data = {
-        "Africa": {
-          "Nigeria": ["Lagos", "Abuja"],
-          "Kenya": ["Nairobi", "Mombasa"]
-        },
-        "Asia": {
-          "India": ["Delhi", "Mumbai"],
-          "China": ["Beijing", "Shanghai"]
-        },
-        // Add other regions and countries as needed
+          "Africa": {
+              "South Africa": ["Cape Town", "Johannesburg"]
+          },
+          "Europe": {
+              "United Kingdom": ["London", "Manchester"],
+              "France": ["Paris", "Lyon"],
+              "Germany": ["Berlin", "Munich"],
+              "Spain": ["Madrid", "Barcelona"],
+              "Italy": ["Rome", "Milan"],
+              "Netherlands": ["Amsterdam", "Rotterdam"],
+              "Belgium": ["Brussels", "Antwerp"],
+              "Sweden": ["Stockholm", "Gothenburg"]
+          },
+          "Oceania": {
+              "Australia": ["Sydney", "Melbourne"],
+              "New Zealand": ["Auckland", "Wellington"]
+          },
+          "North America": {
+              "United States": ["New York", "Los Angeles"],
+              "Canada": ["Toronto", "Vancouver"]
+          }
       };
       
       const regionSelect = document.getElementById('sponsor-region');
