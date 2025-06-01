@@ -69,6 +69,60 @@ document.getElementById('sponsor-form').addEventListener('submit', async functio
   const coin = document.getElementById('sponsor-coin').value.trim();
   const region = document.getElementById('sponsor-region').value.trim();
   const plan = document.querySelector('input[name="plan"]:checked')?.value.trim();
+  // Sample data structure
+  const data = {
+    "Africa": {
+      "Nigeria": ["Lagos", "Abuja"],
+      "Kenya": ["Nairobi", "Mombasa"]
+    },
+    "Asia": {
+      "India": ["Delhi", "Mumbai"],
+      "China": ["Beijing", "Shanghai"]
+    },
+    // Add other regions and countries as needed
+  };
+  
+  const regionSelect = document.getElementById('sponsor-region');
+  const countrySelect = document.getElementById('country');
+  const citySelect = document.getElementById('city');
+  const countryContainer = document.getElementById('country-container');
+  const cityContainer = document.getElementById('city-container');
+  
+  regionSelect.addEventListener('change', function() {
+    const region = this.value;
+    countrySelect.innerHTML = '<option value="">Select Country</option>';
+    citySelect.innerHTML = '<option value="">Select City</option>';
+    cityContainer.style.display = 'none';
+  
+    if (region === 'Global' || !data[region]) {
+      countryContainer.style.display = 'none';
+      return;
+    }
+  
+    countryContainer.style.display = 'block';
+    countrySelect.innerHTML += '<option value="Entire Region">Entire Region</option>';
+    Object.keys(data[region]).forEach(country => {
+      countrySelect.innerHTML += `<option value="${country}">${country}</option>`;
+    });
+  });
+  
+  countrySelect.addEventListener('change', function() {
+    const region = regionSelect.value;
+    const country = this.value;
+    citySelect.innerHTML = '<option value="">Select City</option>';
+  
+    if (country === 'Entire Region' || !data[region][country]) {
+      cityContainer.style.display = 'none';
+      return;
+    }
+  
+    cityContainer.style.display = 'block';
+    citySelect.innerHTML += '<option value="Entire Country">Entire Country</option>';
+    data[region][country].forEach(city => {
+      citySelect.innerHTML += `<option value="${city}">${city}</option>`;
+    });
+  });
+
 
   let hasErrors = false;
 
